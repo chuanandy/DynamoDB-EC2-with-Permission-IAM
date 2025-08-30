@@ -10,26 +10,24 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
-variable "vpc_cidr" {
-  description = "VPC CIDR block"
+variable "yourname" {
+  description = "Used to name resources like <yourname>-bookinventory"
   type        = string
-  default     = "10.0.0.0/16"
-}
-
-variable "public_subnet_cidr" {
-  description = "Public subnet CIDR block"
-  type        = string
-  default     = "10.0.1.0/24"
-}
-
-variable "availability_zone" {
-  description = "Subnet AZ"
-  type        = string
-  default     = "us-east-1a"
+  default     = "andyhon_ecddb"
 }
 
 variable "ami_id" {
   description = "Amazon Linux 2023 kernel-6.1 AMI"
   type        = string
   default     = "ami-00ca32bbc84273381" # 
+}
+variable "ssh_ingress_cidr" {
+  description = "CIDR allowed to SSH to the instance (for testing)."
+  type        = string
+  default     = "0.0.0.0/0"
+}
+
+variable "vpc_id" {
+  description = "VPC ID to deploy resources into"
+  type        = string
 }
